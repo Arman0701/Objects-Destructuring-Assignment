@@ -4,7 +4,6 @@
 // If there's no perator, then default should be +
 
 function printSum(operator, ...values){
-    console.log(values);
     if (operator === '*'){
         return values.reduce((a,b)=>{return a*b});
     }
