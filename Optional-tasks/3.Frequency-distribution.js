@@ -4,21 +4,18 @@
 // This function should return an object, where the keys are the unique elements 
 // and the values are the frequency in which those elements occur.
 
-function sum(){
-    let count = 0;
-    return function(init){
-        return ++count + init;
-    }
-}
-
-function getFrequencies(arr){
-    let obj = {};
-    let counter1 = sum();
-    let counter2 = sum();
+function getFrequencies(arr) {
+    let obj = {}; 
+    
     for (let i=0; i<arr.length; i++){
-        obj[arr[i]] === undefined ? obj[arr[i]] = counter1() : obj[arr[i]] = counter2(counter1());
+        let element = arr[i]; 
+        if (obj[element] !== undefined){
+            obj[element] += 1;
+        } else {
+            obj[element] = 1; 
+        }
     }
-    return obj;
+    return obj
 }
 
 console.log(getFrequencies(["A", "B", "A", "A", "A"])); // ➞ { A: 4, B: 1 }
